@@ -6,6 +6,7 @@ import Spinner from './components/Spinner';
 import Extractor from './components/Extractor';
 import axios from 'axios';
 
+
 const Parr = styled.p`
 font-family: Arial, Helvetica, sans-serif;
 border-style: solid;
@@ -46,6 +47,27 @@ margin-top: 80px;
   display: block;
 }
 `;
+const Footer = styled.footer`
+width:99%;
+float:left;
+clear: both;
+
+position: absolute;
+bottom: 0;
+box-shadow: 0px 2px 2px #000;
+  -moz-box-shadow: 0px 2px 2px #000;
+  -webkit-box-shadow: 0px 2px 2px #000;
+border-radius:5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+background-color: #D3CECE; 
+
+`;
+
+const pfoot = styled.p`
+color: #000;
+font-size:30px;
+`;
 
 function App() {
   const [provincia, guardarProvincia] = useState('');
@@ -68,7 +90,7 @@ function App() {
         guardarCargando(false)
         
       //Guardar la info
-      guardarResultado(resultado.data.municipios[provincia][municipio]);
+      guardarResultado(resultado.data.municipios[0]);
          
       },3000);     
 }
@@ -78,7 +100,7 @@ extraerMunicipio();
  //Mostrar el Spinner o resultado
  const componente = (cargando) ? <Spinner/> : <Extractor resultado={resultado}/> 
 return (
-    
+  <div>
   <Contenedor>
     <div>
       <center>
@@ -98,10 +120,18 @@ return (
       />
      {componente}
     </div>
+     
   </Contenedor>
   
-    
+  <Footer>
+       <center>
+       <pfoot>©Copyright 2020 by IvanQ95. Todos los derechos reservados.</pfoot>
+       </center>
+  </Footer> 
+  
+  </div>
   );
+
 }
 
 export default App;
