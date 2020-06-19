@@ -64,9 +64,11 @@ background-color: #D3CECE;
 
 `;
 
-const pfoot = styled.p`
+const Pfoot = styled.p`
 color: #000;
-font-size:30px;
+font-size: 15px;
+text-align: center;
+font-family: Arial, Helvetica, sans-serif;
 `;
 
 function App() {
@@ -124,9 +126,9 @@ return (
   </Contenedor>
   
   <Footer>
-       <center>
-       <pfoot>©Copyright 2020 by IvanQ95. Todos los derechos reservados.</pfoot>
-       </center>
+       
+       <Pfoot>©Copyright 2020 by IvanQ95. Todos los derechos reservados.</Pfoot>
+       
   </Footer> 
   
   </div>
